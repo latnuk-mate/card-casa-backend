@@ -23,7 +23,7 @@ function checkMimeTypes(file, cb){
 // but we will store for local..
 // configuring disk Engine
 const fileStore = multer.diskStorage({
-    destination: './uploads',
+    destination: './uploads',  // uploads directory should exists
 filename: (req, file, cb)=> {
         const imageFile = file.fieldname + '-'+Date.now().toString()+Path.extname(file.originalname);
         cb(null, imageFile);
