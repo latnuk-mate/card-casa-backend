@@ -15,12 +15,7 @@ function checkMimeTypes(file, cb){
 	}
 }
 
-// we are configuring the memory storage for db part..
-// const storage = multer.memoryStorage();
 
-
-
-// but we will store for local..
 // configuring disk Engine
 const fileStore = multer.diskStorage({
     destination: './uploads',  // uploads directory should exists
@@ -34,7 +29,6 @@ filename: (req, file, cb)=> {
 
 
 const upload = multer({
-    // storage: storage,  for db store..
     storage: fileStore,
     limits: {fileSize : 5242880}, // size of image is ~5 mb
     fileFilter: (req, file, cb)=>{
